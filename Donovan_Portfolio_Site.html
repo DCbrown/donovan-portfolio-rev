@@ -1,0 +1,429 @@
+<!--
+  Donovan C. Brown, portfolio site.
+  Before publishing, replace these placeholders:
+    [INSERT RESUME PDF LINK]        hero Resume button
+    [INSERT DEMO LINK WHEN LIVE]    both in-progress AI projects (x2)
+    [INSERT GITHUB REPO LINK]       both in-progress AI projects (x2)
+  If a project is not live yet, remove that card rather than link to nothing.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donovan C. Brown | Technical Consultant, AI and Automation | Detroit</title>
+<meta name="description" content="Donovan C. Brown builds accessible web, mobile, and AI applications, and teaches other people to build them. Detroit.">
+<meta property="og:title" content="Donovan C. Brown | Technical Consultant, AI and Automation">
+<meta property="og:description" content="I build things that work in the real world, and I help other people build too.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Donovan C. Brown",
+  "jobTitle": "Technical Consultant, AI and Automation",
+  "address": {"@type": "PostalAddress", "addressRegion": "MI", "addressLocality": "Detroit"},
+  "email": "mailto:browncdonovan@gmail.com",
+  "url": "https://cv.browncdonovan.com/",
+  "sameAs": ["https://www.linkedin.com/in/browncdonovan", "https://github.com/DCbrown", "https://www.youtube.com/@AIandTechWithDonovan"]
+}
+</script>
+<style>
+  :root {
+    --ink: #1B2431;
+    --ink-soft: #4B5563;
+    --paper: #F6F8F7;
+    --paper-deep: #E9EEEC;
+    --cobalt: #2453C7;
+    --cobalt-deep: #183B8F;
+    --mint: #D5EBE1;
+    --line: #C9D2CE;
+    --white: #FFFFFF;
+    --display: "Bricolage Grotesque", system-ui, sans-serif;
+    --body: "Source Serif 4", Georgia, serif;
+    --measure: 62ch;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--paper);
+  }
+  a { color: var(--cobalt-deep); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--cobalt); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; border-radius: 2px; }
+  h1, h2, h3, h4 { font-family: var(--display); line-height: 1.1; margin: 0; letter-spacing: -0.01em; }
+  h2 { font-size: clamp(1.75rem, 3.2vw, 2.5rem); font-weight: 600; margin-bottom: 1.25rem; }
+  h3 { font-size: 1.2rem; font-weight: 600; }
+  p { margin: 0 0 1rem; max-width: var(--measure); }
+  .wrap { width: min(1120px, 92vw); margin: 0 auto; }
+  section { padding: 4.5rem 0; }
+  section + section { border-top: 1px solid var(--line); }
+
+  /* Header */
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(246,248,247,0.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; gap: 1rem; }
+  .brand { font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--ink); text-decoration: none; }
+  .nav ul { list-style: none; display: flex; gap: 1.4rem; margin: 0; padding: 0; font-family: var(--display); font-size: 0.95rem; }
+  .nav ul a { color: var(--ink-soft); text-decoration: none; }
+  .nav ul a:hover { color: var(--cobalt); }
+  @media (max-width: 720px) { .nav ul { display: none; } }
+
+  /* Hero */
+  .hero { padding: 5.5rem 0 3.5rem; }
+  .hero h1 {
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    font-weight: 700;
+    max-width: 18ch;
+    margin-bottom: 1.5rem;
+  }
+  .hero .lede { font-size: 1.25rem; max-width: 52ch; color: var(--ink-soft); }
+  .hero .role { font-family: var(--display); font-size: 1.05rem; font-weight: 500; color: var(--cobalt-deep); margin-bottom: 1rem; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+  .btn {
+    font-family: var(--display); font-weight: 600; font-size: 0.98rem;
+    padding: 0.7rem 1.15rem; border-radius: 6px; text-decoration: none;
+    border: 1.5px solid var(--cobalt-deep); color: var(--cobalt-deep); background: transparent;
+  }
+  .btn.primary { background: var(--cobalt-deep); color: var(--white); }
+  .btn.primary:hover { background: var(--cobalt); border-color: var(--cobalt); color: var(--white); }
+  .btn:hover { background: var(--mint); }
+
+  /* The arc: the one memorable element */
+  .arc { background: var(--ink); color: var(--paper); padding: 3.5rem 0 4rem; border-top: none; }
+  .arc h2 { color: var(--white); }
+  .arc p { color: #C9D1DA; }
+  .rail { position: relative; margin-top: 2.5rem; padding-top: 1.75rem; }
+  .rail::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 0.4rem; height: 2px;
+    background: linear-gradient(90deg, #5A6B85 0%, var(--cobalt) 100%);
+  }
+  .rail ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; counter-reset: step; }
+  .rail li { position: relative; }
+  .rail li::before {
+    content: ""; position: absolute; top: -1.75rem; left: 0; width: 14px; height: 14px; border-radius: 50%;
+    background: var(--ink); border: 2px solid #8FA3C2; transform: translateY(-6px);
+  }
+  .rail li:last-child::before { background: var(--cobalt); border-color: var(--cobalt); box-shadow: 0 0 0 6px rgba(36,83,199,0.25); }
+  .rail .when { font-family: var(--display); font-size: 0.85rem; color: #9FB0C7; margin-bottom: 0.3rem; }
+  .rail h3 { color: var(--white); font-size: 1.15rem; margin-bottom: 0.4rem; }
+  .rail p { font-size: 0.98rem; margin: 0; }
+  @media (max-width: 820px) {
+    .rail::before { left: 6px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; background: linear-gradient(180deg, #5A6B85, var(--cobalt)); }
+    .rail { padding-top: 0; padding-left: 2rem; }
+    .rail ol { grid-template-columns: 1fr; gap: 1.75rem; }
+    .rail li::before { top: 0.35rem; left: -2rem; transform: none; }
+  }
+
+  /* Work */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .work { border-top: 2px solid var(--ink); padding-top: 1rem; }
+  .work .tag { font-family: var(--display); font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 0.4rem; }
+  .work h3 a { text-decoration: none; color: var(--ink); }
+  .work h3 a:hover { color: var(--cobalt); text-decoration: underline; }
+  .work p { font-size: 0.98rem; margin-top: 0.5rem; }
+  .featured { background: var(--mint); border-radius: 10px; padding: 1.5rem; border-top: none; }
+  .featured .tag { color: var(--cobalt-deep); }
+  .note { font-family: var(--display); font-size: 0.9rem; color: var(--ink-soft); border-left: 3px solid var(--cobalt); padding-left: 0.85rem; margin-top: 1.5rem; max-width: var(--measure); }
+
+  /* Teaching */
+  .two-col { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: start; }
+  @media (max-width: 820px) { .two-col { grid-template-columns: 1fr; } }
+  .list { list-style: none; padding: 0; margin: 0; }
+  .list li { padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
+  .list li strong { font-family: var(--display); font-weight: 600; }
+  .list li span { display: block; color: var(--ink-soft); font-size: 0.95rem; }
+
+  /* Testimonials */
+  .quotes { columns: 2; column-gap: 2rem; }
+  @media (max-width: 820px) { .quotes { columns: 1; } }
+  blockquote { break-inside: avoid; margin: 0 0 1.5rem; padding: 1.25rem 1.4rem; background: var(--white); border-radius: 8px; border: 1px solid var(--line); }
+  blockquote p { font-size: 1rem; margin-bottom: 0.6rem; }
+  blockquote cite { font-family: var(--display); font-style: normal; font-size: 0.9rem; color: var(--ink-soft); }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem 2.5rem; }
+  .skills h3 { margin-bottom: 0.5rem; }
+  .skills p { font-size: 0.98rem; }
+
+  /* Orgs */
+  .orgs { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .orgs a { font-family: var(--display); font-size: 0.9rem; text-decoration: none; color: var(--ink); background: var(--white); border: 1px solid var(--line); padding: 0.4rem 0.8rem; border-radius: 999px; }
+  .orgs a:hover { border-color: var(--cobalt); color: var(--cobalt); }
+
+  /* Contact */
+  .contact { background: var(--paper-deep); }
+  .contact .links { display: flex; flex-wrap: wrap; gap: 1.5rem; font-family: var(--display); }
+  footer { padding: 2rem 0; font-family: var(--display); font-size: 0.9rem; color: var(--ink-soft); border-top: 1px solid var(--line); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">Donovan C. Brown</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#people">People</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="role">Technical Consultant, AI and Automation. Instructor. Detroit.</div>
+    <h1>I build things that work in the real world, and I help other people build too.</h1>
+    <p class="lede">I started at the help desk, taught myself to code, and now set up practical AI and automation for small businesses and teams. I teach it too, on YouTube and in rooms across Detroit. Organizer with AI Collective Detroit.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#work">See what I've built</a>
+      <a class="btn" href="mailto:browncdonovan@gmail.com">Say hello</a>
+      <a class="btn" href="https://www.youtube.com/@AIandTechWithDonovan" target="_blank">YouTube</a>
+      <a class="btn" href="resume/Donovan_Brown_Resume.pdf" target="_blank">Resume (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<section class="arc">
+  <div class="wrap">
+    <h2>The path here</h2>
+    <p>Every step taught me something about the people on the other side of the screen.</p>
+    <div class="rail">
+      <ol>
+        <li>
+          <div class="when">2010 to 2014</div>
+          <h3>Help desk and field service</h3>
+          <p>Hewlett Packard, then Henry Ford OptimEyes, then Detroit Medical Center. Learned to fix the problem and explain it without making anyone feel small.</p>
+        </li>
+        <li>
+          <div class="when">2015 onward</div>
+          <h3>Self-taught developer</h3>
+          <p>freeCodeCamp, Grand Circus, and a lot of late nights. Shipped client sites, a progressive web app, and an iOS app. Developer at Detroit Labs, then UI developer at CQL.</p>
+        </li>
+        <li>
+          <div class="when">2017 onward</div>
+          <h3>Instructor and mentor</h3>
+          <p>Lead instructor with JOURNi. Speaker at Black Tech Saturdays and Per Scholas. Founded Code Connect Mentoring in 2024 for career-changers.</p>
+        </li>
+        <li>
+          <div class="when">Now</div>
+          <h3>Applied AI</h3>
+          <p>Setting up Claude, Cowork, and automation workflows for small businesses. Building AI applications with production instincts. Teaching it all on <a href="https://www.youtube.com/@AIandTechWithDonovan" style="color:#9FB0C7">AI And Tech With Donovan</a> and with AI Collective Detroit.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Selected work</h2>
+    <p>Real projects for real people. Anything still in progress says so.</p>
+    <div class="grid">
+
+      <article class="work featured">
+        <div class="tag">Applied AI, in progress</div>
+        <h3>Ask the docs</h3>
+        <p>A retrieval-augmented assistant that answers questions from a set of documents and cites where each answer came from. Built on public data, with an evaluation section and a plain note on what it will and will not answer.</p>
+      </article>
+
+      <article class="work featured">
+        <div class="tag">Applied AI, in progress</div>
+        <h3>Workflow automation demo</h3>
+        <p>An intake and ticket-triage flow built in Microsoft Power Platform on sample data. Shows how a routine task gets automated and then handed back to the people who run it.</p>
+      </article>
+
+      <article class="work">
+        <div class="tag">Web, team project</div>
+        <h3><a href="https://www.richlandfoodpantry.org/" target="_blank">Richland Food Pantry</a></h3>
+        <p>Rebuilt a single-page site into a multi-page site with a team of seven. People in need can look up information, sign up to volunteer, follow the pantry's Facebook feed, and switch the site to Spanish.</p>
+      </article>
+
+      <article class="work">
+        <div class="tag">Web, nonprofit</div>
+        <h3><a href="https://www.hni.ngo/" target="_blank">Humanitarian Need International</a></h3>
+        <p>A website for an organization supporting Congolese women and children through education and community empowerment.</p>
+      </article>
+
+      <article class="work">
+        <div class="tag">iOS, React Native</div>
+        <h3><a href="https://apps.apple.com/sn/app/d12-table-top/id1607752441" target="_blank">D12 Table Top</a></h3>
+        <p>A mobile app for tabletop dice rolling with modifiers and a roll log. Published on the App Store.</p>
+      </article>
+
+      <article class="work">
+        <div class="tag">Conversational AI, React</div>
+        <h3><a href="https://cheery-brioche-3e7adc.netlify.app/" target="_blank">Storefront chatbot</a></h3>
+        <p>A fictional storefront with a BotPress chatbot that answers questions about returns, deliveries, and warranties.</p>
+      </article>
+
+      <article class="work">
+        <div class="tag">Progressive web app, React</div>
+        <h3><a href="https://kind-hypatia-a5784c.netlify.app/" target="_blank">Chill &amp; Code playlist</a></h3>
+        <p>An installable playlist app of mostly instrumental music for focus, built with React and the H5 audio player.</p>
+      </article>
+
+    </div>
+    <div class="note">Earlier AI demos went offline when their API endpoints expired. I'm rebuilding them on current models with proper documentation. More at <a href="https://github.com/DCbrown" target="_blank">github.com/DCbrown</a>.</div>
+  </div>
+</section>
+
+<section id="teaching">
+  <div class="wrap two-col">
+    <div>
+      <h2>Teaching and community</h2>
+      <p>I learned to code because people were generous with what they knew. Passing that on is part of the job, not a side project.</p>
+      <p>I teach adults and young people, from first lines of code to building with LLMs, and help organize AI Collective Detroit.</p>
+      <p>If you're trying to get into tech and don't know where to start, reach out. I answer.</p>
+    </div>
+    <ul class="list">
+      <li><strong>AI Collective Detroit</strong><span>Organizer and event host. Co-hosted "Learn to build AI Agents using Hermes" at One Detroit Center, August 2026. Brokered partnerships with Hack The Nest (EMU) and NEI.</span></li>
+      <li><strong>Code Connect Mentoring</strong><span>Founder, 2024. Resume, portfolio, and interview coaching for career-changers.</span></li>
+      <li><strong>JOURNi</strong><span>Lead instructor for adult workshops on Supabase and Prompt Engineering with LLMs. Youth web development sessions.</span></li>
+      <li><strong>Black Tech Saturdays</strong><span>Speaker, Digital Empowerment Summit 2025. Innovation and Growth Award, 2024.</span></li>
+      <li><strong>100 Black Men of Greater Detroit</strong><span>Youth coding instruction at WCCCD.</span></li>
+      <li><strong>Per Scholas Detroit, Grand Circus, Girl Develop It, Detroit Black Tech, Developers of Detroit</strong><span>Guest speaker, volunteer instructor, and longtime community member.</span></li>
+      <li><strong>AI And Tech With Donovan (YouTube)</strong><span>Weekly tutorials on Claude, Cowork, and practical AI for small business owners, no jargon. <a href="https://www.youtube.com/@AIandTechWithDonovan">Watch</a></span></li>
+      <li><strong>Talks and interviews</strong><span>Heart And Profit Podcast guest. Featured by nocsdegree.com on teaching yourself to code without a degree.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>What I work with</h2>
+    <div class="skills">
+      <div>
+        <h3>Applied AI</h3>
+        <p>Claude Chat, Cowork, and Projects setup for businesses. Prompt engineering, LLM API integration, retrieval-augmented generation, chatbots. Working toward the Microsoft Azure AI credentials.</p>
+      </div>
+      <div>
+        <h3>Web and mobile</h3>
+        <p>JavaScript, TypeScript, React, React Native, Next.js, Angular, Node, REST APIs, progressive web apps, accessibility.</p>
+      </div>
+      <div>
+        <h3>Automation and data</h3>
+        <p>Microsoft Power Platform, workflow automation, Firebase, Supabase.</p>
+      </div>
+      <div>
+        <h3>How I build</h3>
+        <p>Accessibility, error handling, evaluation, documentation, and privacy-safe data practices.</p>
+      </div>
+      <div>
+        <h3>Teaching and enablement</h3>
+        <p>Curriculum design, workshop facilitation, explaining technical work to non-technical teams.</p>
+      </div>
+      <div>
+        <h3>Foundations</h3>
+        <p>CompTIA A+, help desk and field service, Windows administration, systems support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="people">
+  <div class="wrap">
+    <h2>What people say</h2>
+    <div class="quotes">
+      <blockquote>
+        <p>Any time that we've had a special event he's volunteered to step in and lead sessions on web development. We're honored and grateful that Donovan continues to support Journi in this very important way.</p>
+        <cite>Richard Grundy, CEO, JOURNi</cite>
+      </blockquote>
+      <blockquote>
+        <p>There has not been a time or reason that he is not willing to help someone. Even if it was not his job, he will go above and beyond. Always a smile.</p>
+        <cite>Colleague, Henry Ford OptimEyes</cite>
+      </blockquote>
+      <blockquote>
+        <p>Donovan always has a no-problem, can-do attitude and he never makes fun of my lack of computer knowledge. He is an asset.</p>
+        <cite>Colleague, Henry Ford OptimEyes</cite>
+      </blockquote>
+      <blockquote>
+        <p>Donovan gave an excellent presentation that revitalized my desire to work on my personal projects along with a framework to get it done.</p>
+        <cite>Alexander Molex, Digital Empowerment Summit 2025</cite>
+      </blockquote>
+      <blockquote>
+        <p>I mostly got zero feedback from most of them. I eventually reached out to Donovan Brown. He reviewed my CV and cover letter, gave me tips and tools, and keeps telling me to always come back when I hit any roadblock.</p>
+        <cite>Francis Xavier Blankson, mentee</cite>
+      </blockquote>
+      <blockquote>
+        <p>He is always there when I have a question and he works hard to make certain that I understand all aspects of his methods.</p>
+        <cite>Anthony Scales II, mentee</cite>
+      </blockquote>
+      <blockquote>
+        <p>I reached out to Donovan in 2017 for advice on how to get started in web development. He has given me great advice over the years ever since.</p>
+        <cite>Ergys Llojaj, mentee</cite>
+      </blockquote>
+      <blockquote>
+        <p>Very easy to work with, very professional, engaging to drive results, and can quickly adapt to change.</p>
+        <cite>Russell Balow, 4 Pints Production</cite>
+      </blockquote>
+      <blockquote>
+        <p>Donovan demonstrates good client communication by keeping me updated during the redesign and development process and has the ability to deliver results.</p>
+        <cite>Terrance R. Campbell, client</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Organizations I've worked with</h2>
+    <div class="orgs">
+      <a href="https://www.aicollective.com/chapters/detroit">AI Collective Detroit</a>
+      <a href="https://www.live6detroit.org/">Live6 Alliance</a>
+      <a href="http://www.journi.org/">JOURNi</a>
+      <a href="https://www.blacktechsaturdays.com/">Black Tech Saturdays</a>
+      <a href="https://www.cqlcorp.com/">CQL</a>
+      <a href="https://www.detroitlabs.com/">Detroit Labs</a>
+      <a href="https://detroitsmallbusiness.umich.edu/">Detroit Neighborhood Entrepreneurs Project</a>
+      <a href="https://codeforgoodwm.org/">Code For Good</a>
+      <a href="https://dsdt.edu/">Detroit School for Digital Technology</a>
+      <a href="https://www.grandcircus.co/">Grand Circus</a>
+      <a href="https://www.girldevelopit.com/">Girl Develop It</a>
+      <a href="https://www.100blackmendetroit.org/">100 Black Men of Greater Detroit</a>
+      <a href="http://detroitblacktech.org">Detroit Black Tech</a>
+      <a href="https://www.connect313.org/">Connect 313</a>
+      <a href="https://code.org/">Code.org</a>
+      <a href="https://acceleratekid.com/">Accelerate Kid</a>
+      <a href="https://angelhack.com">AngelHack</a>
+      <a href="https://www.vmlyr.com">VML</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p>I'm open to consulting and full-time roles where I can set up AI and automation, build what's missing, and help a team get good at both. If you run a small business, build in Detroit, or are trying to break into tech, I'd like to hear from you.</p>
+    <div class="links">
+      <a href="mailto:browncdonovan@gmail.com">browncdonovan@gmail.com</a>
+      <a href="https://www.linkedin.com/in/browncdonovan">LinkedIn</a>
+      <a href="https://github.com/DCbrown">GitHub</a>
+      <a href="https://www.youtube.com/@AIandTechWithDonovan">YouTube</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">Donovan C. Brown, Greater Detroit, Michigan. Built by hand.</div>
+</footer>
+
+</body>
+</html>
